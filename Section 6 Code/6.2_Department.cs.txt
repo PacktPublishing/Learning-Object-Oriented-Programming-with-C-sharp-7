@@ -1,0 +1,18 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OutVarApp
+{
+	public class Department
+	{
+		public int SemesterResult(int[] marks, out int highestMark)
+		{
+			Array.Sort(marks);
+			highestMark = marks[marks.Length - 1];
+			return marks.Length;
+		}
+	}
+}

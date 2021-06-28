@@ -1,0 +1,20 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace generics_App
+{
+	public class GenericList
+	{
+		public void Add<T>(T item) {
+			Console.WriteLine($"{item} added in the list");
+		}
+
+		public void Remove<T>(T item)
+		{
+			Console.WriteLine($"{item} removed in the list");
+		}
+	}
+}

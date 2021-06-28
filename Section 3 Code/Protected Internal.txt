@@ -1,0 +1,19 @@
+class ClassTest
+{
+    protected internal string name; // protected internal
+    public void print()
+    {
+        Console.WriteLine("\nMy name is " + name);
+    }
+}
+// to access the method
+class Program
+{
+    static void Main(string[] args)
+    {
+        ClassTest objClassTest = new ClassTest();
+        // Accepting value in protected internal variable
+        objClassTest.name = "Arka";
+        objClassTest.print();
+    }
+}

@@ -1,0 +1,77 @@
+using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace MyCalculator.Test
+{
+	[TestClass]
+	public class CalculateTest
+	{
+		[TestMethod]
+		public void Add_TwoPositiveIntegers_ReturnSum()
+		{
+			// Arragne
+			Calculate theCalculator = new Calculate();
+			int arg1 = 5;
+			int arg2 = 4;
+			int exp = 9; // 5+4 = 9
+			int result = 0;
+
+			// Act
+			result = theCalculator.Add(arg1, arg2);
+
+			// Assert
+			Assert.AreEqual(exp, result);
+		}
+
+		[TestMethod]
+		public void Subtract_TwoPositiveIntegers_ReturnSubtract()
+		{
+			// Arragne
+			Calculate theCalculator = new Calculate();
+			int arg1 = 5;
+			int arg2 = 4;
+			int exp = 1; // 5-4 = 1
+			int result = 0;
+
+			// Act
+			result = theCalculator.Subtract(arg1, arg2);
+
+			// Assert
+			Assert.AreEqual(exp, result);
+		}
+
+		[TestMethod]
+		public void Subtract_FristArgumentPositiveAndSecondArgumentNegetive_ReturnZero()
+		{
+			// Arragne
+			Calculate theCalculator = new Calculate();
+			int arg1 = 5;
+			int arg2 = -2;
+			int exp = 0; // As per business requirement
+			int result = 0;
+
+			// Act
+			result = theCalculator.Subtract(arg1, arg2);
+
+			// Assert
+			Assert.AreEqual(exp, result);
+		}
+
+		[TestMethod]
+		public void Subtract_FirstArgumentSamllerAndSecondArgumentLarger_SubtractFromLargeNumber()
+		{
+			// Arragne
+			Calculate theCalculator = new Calculate();
+			int arg1 = 3;
+			int arg2 = 9;
+			int exp = 6; // 9-3=6
+			int result = 0;
+
+			// Act
+			result = theCalculator.Subtract(arg1, arg2);
+
+			// Assert
+			Assert.AreEqual(exp, result);
+		}
+	}
+}

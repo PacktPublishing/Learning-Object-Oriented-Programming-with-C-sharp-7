@@ -1,0 +1,33 @@
+[TestMethod]
+public void Credit_PositiveDecimalLessThan100_ShouldNotDeduct()
+{
+	// Arrange
+	Customer aCustomer = new Customer();
+	aCustomer.bankAccount = new BankAccount(); // initial amount 100
+	decimal amount = 60;
+	string failed = "Traction failed!";
+	string success = "Your account has been credited successfully!";
+
+	// Act
+	string result = aCustomer.bankAccount.Credit(amount);
+
+	// Assert
+	Assert.AreEqual(success, result);
+}
+
+[TestMethod]
+public void Credit_NegetiveDecimalLessThan100_TransactionDenied()
+{
+	// Arrange
+	Customer aCustomer = new Customer();
+	aCustomer.bankAccount = new BankAccount(); // initial amount 100
+	decimal amount = -60;
+	string failed = "Traction failed!";
+	string success = "Your account has been credited successfully!";
+
+	// Act
+	string result = aCustomer.bankAccount.Credit(amount);
+
+	// Assert
+	Assert.AreEqual(failed, result);
+}

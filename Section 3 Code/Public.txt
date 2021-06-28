@@ -1,0 +1,19 @@
+class ClassTest
+{
+    //Public method
+    public void MethodPublic()
+    {
+        // defination of MethodPublic
+    }
+}
+
+// to access the method
+class Program
+{
+    static void Main(string[] args)
+    {
+        ClassTest objClassTest = new ClassTest();
+
+        objClassTest.MethodPublic(); // valid code to access.
+    }
+}

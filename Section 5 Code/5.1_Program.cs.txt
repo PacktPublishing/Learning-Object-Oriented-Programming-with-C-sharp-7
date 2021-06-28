@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ExpApp
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int num1 = 10;
+			int num2 = 5;
+
+			int result = 0;
+			int result1 = num2 * 2; // 5 * 2 = 10
+			int result2 = num1 - result1; // 10 - 10  = 0
+
+			try
+			{
+				if (result2 == 0)
+				{
+					throw new Exception("Why you give such number?");
+				}
+				else
+				{
+					result = num1 / result2;
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("Exception: " + ex.Message);
+				result = 2; // default value;
+			}
+			finally
+			{
+				num1 = 0;
+				num2 = 0;
+				Console.WriteLine("Reset values done!");
+			}
+
+
+			Console.WriteLine($"Result is {result}");
+		}
+	}
+}

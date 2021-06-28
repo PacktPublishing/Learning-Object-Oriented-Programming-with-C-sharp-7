@@ -1,0 +1,37 @@
+public static void StartApp(Customer aCustomer)
+{
+	Console.WriteLine();
+	Console.WriteLine("--------------------------------------------");
+	Console.WriteLine("What kind of transaciton do you want to do?");
+	Console.WriteLine("To debit money, enter 1");
+	Console.WriteLine("To credit money, enter 2");
+	Console.WriteLine("To know your account balance, enter 0");
+	Console.WriteLine("To see your information, enter 9");
+	Console.Write("Enter your number: ");
+
+	string input = Console.ReadLine();
+
+	switch (input)
+	{
+		case "1":
+			Console.Write("Enter the amount: ");
+			decimal value = Convert.ToDecimal(Console.ReadLine());
+			Console.WriteLine(aCustomer.bankAccount.Debit(value));
+			break;
+		case "2":
+			Console.Write("Enter the amount: ");
+			decimal userValue = Convert.ToDecimal(Console.ReadLine());
+			Console.WriteLine(aCustomer.bankAccount.Credit(userValue));
+			break;
+		case "0":
+			Console.WriteLine("Your account balance is: " + aCustomer.bankAccount.AccountBalance);
+			break;
+		case "9":
+			Console.WriteLine("Your information:");
+			Console.WriteLine(aCustomer.CustomerInfo());
+			break;
+		default:
+			Console.WriteLine("You have entered wrong number");
+			break;
+	}
+}

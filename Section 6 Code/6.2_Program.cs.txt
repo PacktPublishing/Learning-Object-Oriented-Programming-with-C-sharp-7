@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OutVarApp
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			Department dept = new Department();
+
+			int[] studentMarks = new int[] { 87, 89, 72, 45, 98, 54, 69 };
+
+			int high = 10;
+			Console.WriteLine("High is " + high);
+
+			int numOfStudent = dept.SemesterResult(studentMarks, out high);
+
+			Console.WriteLine($"Student number: {numOfStudent} and highest mark {high}");
+		}
+	}
+}

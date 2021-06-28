@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DeconstructionApp
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			string name = "John Doe";
+			var (firstName, lastName) = SplitNames(name);
+			//(var firstName, var lastName) = SplitNames(name);
+
+			Console.WriteLine($"Hello {firstName}, your lastname is {lastName}");
+		}
+
+		public static (string firstName, string lastName) SplitNames(string fullname)
+		{
+			string[] names = fullname.Split(' ');
+
+			return (names[0], names[1]);
+		}
+	}
+}

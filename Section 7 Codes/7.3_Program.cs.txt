@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LocalFunctionApp
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int totalAmount = CalculateTax(10000, 4, 35); // 10000 + 4 + 20 = 10024
+			int anotherAmount = CalculateTax(10000, 4, 65); // 10000 + 4 + 10 = 10014
+			Console.WriteLine($"Total amount with Tax {totalAmount}");
+			Console.WriteLine($"Another amount with Tax {anotherAmount}");
+		}
+
+		public static int CalculateTax(int salary, int taxRate, int age)
+		{
+			int result = 0;
+
+			int AgeCheck(int personAge)
+			{
+				if (personAge > 50)
+				{
+					return 10;
+				}
+				else
+				{
+					return 20;
+				}
+			}
+
+			result = salary + taxRate + AgeCheck(age);
+
+			return result;
+		}
+	}
+}

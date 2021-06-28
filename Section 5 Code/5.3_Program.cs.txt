@@ -1,0 +1,22 @@
+static void Main(string[] args)
+		{
+			GenericList intList = new GenericList();
+			GenericList doubleList = new GenericList();
+
+			intList.Add<int>(4);
+			intList.Add<int>(6);
+			intList.Add<int>(12);
+
+			intList.Remove<int>(4);
+
+			Console.WriteLine("");
+			Console.WriteLine("---------------");
+			Console.WriteLine("");
+
+			doubleList.Add<double>(2.1);
+			doubleList.Add<double>(3.6);
+			doubleList.Add<double>(9.4);
+
+			doubleList.Remove<double>(2.1);
+			
+		}

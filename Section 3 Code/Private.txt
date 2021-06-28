@@ -1,0 +1,18 @@
+class ClassTest
+{
+    //Private method
+    private void MethodPrivate()
+    {
+        // defination of MethodPrivate
+    }
+}
+// to access the method
+class Program
+{
+    static void Main(string[] args)
+    {
+        ClassTest objClassTest = new ClassTest();
+
+        objClassTest.MethodPrivate(); // invalid code to access.
+    }
+}

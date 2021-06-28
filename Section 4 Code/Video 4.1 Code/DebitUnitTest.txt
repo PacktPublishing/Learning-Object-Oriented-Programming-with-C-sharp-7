@@ -1,0 +1,54 @@
+[TestMethod]
+public void Debit_PositiveDecimalLessThanAccountBalance_Success()
+{
+	// Arrange
+	Customer aCustomer = new Customer();
+	aCustomer.bankAccount = new BankAccount(); // initial amount 100
+	decimal amount = 40;
+	string insuficiantBalance = "Sorry, you have insufficient balance!";
+	string wrongAmount = "The amount you entered is wrong!";
+	string success = "Transaction successful!";
+	string notEnoughMoney = "You don't have enough money to do this transaction";
+
+	// Act
+	string result = aCustomer.bankAccount.Debit(amount);
+
+	// Assert
+	Assert.AreEqual(true, result.Contains(success));
+}
+
+[TestMethod]
+public void Debit_NegetiveDecimalLessThanAccountBalance_WrongAmount()
+{
+	// Arrange
+	Customer aCustomer = new Customer();
+	aCustomer.bankAccount = new BankAccount(); // initial amount 100
+	decimal amount = -40;
+	string wrongAmount = "The amount you entered is wrong!";
+	string success = "Transaction successful!";
+	string notEnoughMoney = "You don't have enough money to do this transaction";
+
+	// Act
+	string result = aCustomer.bankAccount.Debit(amount);
+
+	// Assert
+	Assert.AreEqual(success, result);
+}
+
+[TestMethod]
+public void Debit_PositiveDecimalGreaterThanAccountBalance_NotEnoughMoney()
+{
+	// Arrange
+	Customer aCustomer = new Customer();
+	aCustomer.bankAccount = new BankAccount(); // initial amount 100
+	decimal amount = 200;
+	string wrongAmount = "The amount you entered is wrong!";
+	string success = "Transaction successful!";
+	string notEnoughMoney = "You don't have enough money to do this transaction";
+
+	// Act
+	string result = aCustomer.bankAccount.Debit(amount);
+
+	// Assert
+	Assert.AreEqual(notEnoughMoney, result);
+}

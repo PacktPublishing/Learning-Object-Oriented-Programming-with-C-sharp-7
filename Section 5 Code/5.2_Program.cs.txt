@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace video_5_2_event_delegates
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			BankStatement bs = new BankStatement("December");
+			BankStatementSender sender = new BankStatementSender();
+			MailService ms = new MailService();
+			TextMessage tx = new TextMessage();
+
+			sender.BankStatementSent += ms.OnStatementSend;
+			sender.BankStatementSent += tx.OnStatementSend;
+
+			sender.SendStatement(bs);
+		}
+	}
+
+	public class MailService
+	{
+		public void OnStatementSend(object source, EventArgs e)
+		{
+			Console.WriteLine("Sending Email...");
+		}
+	}
+
+	public class TextMessage
+	{
+		public void OnStatementSend(object source, EventArgs e)
+		{
+			Console.WriteLine("Sending text...");
+		}
+	}
+}

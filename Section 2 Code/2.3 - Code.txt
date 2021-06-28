@@ -1,0 +1,20 @@
+using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace MyFirstUnitTestProject
+{
+	[TestClass]
+	public class UnitTest1
+	{
+		[TestMethod]
+		public void TestMethod1()
+		{
+			// Arrange
+			bool result = true;
+			// Act
+			result = !result;
+			// Assert
+			Assert.IsFalse(result);
+		}
+	}
+}

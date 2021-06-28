@@ -1,0 +1,51 @@
+public class BankAccount
+{
+	public decimal AccountBalance { set; get; }
+
+	public BankAccount()
+	{
+		this.AccountBalance = 100;
+	}
+
+	public string Debit(decimal amount)
+	{
+		string statement = "Sorry, you have insufficient balance!";
+
+		if (amount > 0)
+		{
+			statement = "The amount you entered is wrong!";
+
+			if (this.AccountBalance > amount)
+			{
+				this.AccountBalance = this.AccountBalance - amount;
+				statement = "Transaction successful! New account balace is " + this.AccountBalance;
+			}
+			else
+			{
+				statement = "You don't have enough money to do this transaction";
+			}
+			
+		}
+
+		return statement;
+	}
+
+	public string Credit(decimal amount)
+	{
+		string statement = "Traction failed!";
+
+		if (amount > 0)
+		{
+			this.AccountBalance = this.AccountBalance + amount;
+
+			if (amount > 100)
+			{
+				this.AccountBalance = this.AccountBalance - 1;
+			}
+			
+			statement = "Your account has been credited successfully!";
+		}
+
+		return statement;
+	}
+}

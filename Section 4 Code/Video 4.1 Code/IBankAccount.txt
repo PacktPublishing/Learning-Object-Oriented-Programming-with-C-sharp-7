@@ -1,0 +1,5 @@
+interface IBankAccount
+{
+	string Debit(decimal d);
+	string Credit(decimal d);
+}

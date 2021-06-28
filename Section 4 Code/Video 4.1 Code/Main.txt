@@ -1,0 +1,28 @@
+public static void Main(string[] args)
+{
+	BankAccount myBankAccount = new BankAccount();
+
+	Customer aCustomer = new Customer();
+	aCustomer.FirstName = "John";
+	aCustomer.LastName = "Doe";
+	aCustomer.Age = 30;
+	aCustomer.Gender = "Male";
+	aCustomer.MobileNumber = "000111222333";
+	aCustomer.bankAccount = myBankAccount;
+
+	string donNotExit = "";
+
+	do
+	{
+		StartApp(aCustomer);
+
+		Console.Write("Do you want to continue? (Y/N):");
+
+		donNotExit = Console.ReadLine();
+		
+	} while (donNotExit == "Y") ;
+
+	Console.WriteLine("Thanks for using our bank");
+
+	Console.ReadLine();
+}

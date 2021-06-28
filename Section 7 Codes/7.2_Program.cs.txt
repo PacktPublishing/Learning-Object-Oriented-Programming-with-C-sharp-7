@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PatternMatchingApp
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			Burger burger = new Burger();
+			burger.Name = "Big Pac";
+			burger.Calorie = 32.2M; // Dummy data
+			burger.Taste = "Awesome";
+
+			Salad salad = new Salad();
+			salad.Name = "Chicken Salad";
+			salad.Calorie = 2.2M; // Dummy data
+			salad.Taste = "Good";
+
+			PrintFoodInfo(salad);
+		}
+
+		public static void PrintFoodInfo(object food)
+		{
+			//if (food is Burger burger)
+			//{
+			//	//Burger burger = (Burger)food;
+
+			//	Console.WriteLine($"{burger.Name} is {burger.Taste}! It's calorie is {burger.Calorie}");
+			//}
+
+			//if (food is Salad)
+			//{
+			//	Salad salad = (Salad)food;
+
+			//	Console.WriteLine($"{salad.Name} is {salad.Taste}! It's calorie is {salad.Calorie}");
+			//}
+
+			switch (food)
+			{
+				case Burger burger:
+					Console.WriteLine($"{burger.Name} is {burger.Taste}! It's calorie is {burger.Calorie}");
+					break;
+				case Salad salad:
+					Console.WriteLine($"{salad.Name} is {salad.Taste}! It's calorie is {salad.Calorie}");
+					break;
+				case null:
+					Console.WriteLine("This is default");
+					break;
+			}
+
+
+		}
+	}
+}

@@ -1,0 +1,17 @@
+class ClassTest
+{
+    internal void MethodInternal()
+    {
+        // do your code
+    }
+}
+// to access the method
+class Program
+{
+    static void Main(string[] args)
+    {
+        ClassTest objClassTest = new ClassTest();
+
+        objClassTest.MethodInternal(); // valid code to access.
+    }
+}
